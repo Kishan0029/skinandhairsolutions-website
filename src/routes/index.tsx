@@ -237,7 +237,7 @@ function Home() {
       {/* SERVICES */}
       <section className="bg-beige py-16 md:py-24">
         <div className="container-x">
-          <div className="flex items-end justify-between gap-6">
+          <div className="flex flex-col items-start gap-4 md:flex-row md:items-end md:justify-between md:gap-6">
             <div>
               <p className="eyebrow">Our Care</p>
               <h2 className="mt-4 max-w-2xl font-display text-3xl md:text-5xl">
@@ -246,7 +246,7 @@ function Home() {
             </div>
             <Link
               to="/skin-treatments"
-              className="hidden link-underline text-sm font-medium text-primary md:inline-block"
+              className="link-underline text-sm font-medium text-primary"
             >
               Explore all →
             </Link>
