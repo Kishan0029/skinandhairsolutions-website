@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import laser from "@/assets/laser-tech.jpg";
+import laser from "@/assets/laser-tech.png";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
+import { FadeIn, SlideUp } from "@/components/ui/motion";
 
 export const Route = createFileRoute("/aesthetic-treatments")({
   head: () => ({
@@ -50,8 +52,8 @@ function Aesthetic() {
           <Link to="/contact" className="btn-primary">
             Book Consultation
           </Link>
-          <a href="https://wa.me/919000000000" className="btn-outline">
-            WhatsApp
+          <a href="https://wa.me/919000000000" className="btn-outline inline-flex items-center gap-2">
+            <WhatsAppIcon className="h-4 w-4" /> WhatsApp
           </a>
         </div>
       </PageHero>
@@ -60,32 +62,31 @@ function Aesthetic() {
         <div className="container-x">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {PROCEDURES.map((p, i) => (
-              <article
-                key={p.t}
-                className="group flex flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-foreground/5 transition-shadow hover:shadow-xl"
-              >
-                <div className="aspect-[4/3] overflow-hidden bg-secondary">
-                  <img
-                    src={laser}
-                    alt={p.t}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <span className="text-xs text-muted-foreground">0{i + 1}</span>
-                  <h2 className="mt-3 font-display text-xl">{p.t}</h2>
-                  <p className="mt-2 text-sm text-muted-foreground">{p.d}</p>
-                </div>
-              </article>
+              <SlideUp key={p.t} delay={i * 0.1}>
+                <article className="group flex h-full flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-foreground/5 transition-shadow hover:shadow-xl">
+                  <div className="aspect-[4/3] overflow-hidden bg-secondary">
+                    <img
+                      src={laser}
+                      alt={p.t}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <span className="text-xs text-muted-foreground">0{i + 1}</span>
+                    <h2 className="mt-3 font-display text-xl">{p.t}</h2>
+                    <p className="mt-2 text-sm text-muted-foreground">{p.d}</p>
+                  </div>
+                </article>
+              </SlideUp>
             ))}
           </div>
-          <div className="mt-12 rounded-2xl bg-secondary p-6">
+          <FadeIn className="mt-12 rounded-2xl bg-secondary p-6">
             <p className="font-display text-2xl">Safe for Indian skin.</p>
             <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
               Our protocols are selected and calibrated specifically for South Asian skin types.
             </p>
-          </div>
+          </FadeIn>
         </div>
       </section>
     </>

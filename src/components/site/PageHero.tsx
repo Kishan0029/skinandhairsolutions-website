@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Stagger, StaggerItem } from "@/components/ui/motion";
 
 export function PageHero({
   eyebrow,
@@ -21,14 +22,26 @@ export function PageHero({
         className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-primary/10 blur-3xl"
         aria-hidden
       />
-      <div className="container-x relative">
-        <p className="eyebrow">{eyebrow}</p>
-        <h1 className="reveal mt-5 max-w-4xl font-display text-5xl leading-[1.02] md:text-7xl">
-          {title}
-        </h1>
-        {lede && <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{lede}</p>}
-        {children && <div className="mt-8">{children}</div>}
-      </div>
+      <Stagger className="container-x relative">
+        <StaggerItem>
+          <p className="eyebrow">{eyebrow}</p>
+        </StaggerItem>
+        <StaggerItem>
+          <h1 className="reveal mt-5 max-w-4xl font-display text-5xl leading-[1.02] md:text-7xl">
+            {title}
+          </h1>
+        </StaggerItem>
+        {lede && (
+          <StaggerItem>
+            <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{lede}</p>
+          </StaggerItem>
+        )}
+        {children && (
+          <StaggerItem>
+            <div className="mt-8">{children}</div>
+          </StaggerItem>
+        )}
+      </Stagger>
     </section>
   );
 }

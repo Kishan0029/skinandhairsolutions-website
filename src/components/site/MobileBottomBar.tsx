@@ -1,11 +1,13 @@
 import { Link, useMatchRoute } from "@tanstack/react-router";
-import { Home, Sparkles, Scissors, BookOpen, Phone } from "lucide-react";
+import { Home, Sparkles, Scissors, Phone } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
 interface NavItem {
-  to: string;
+  to?: string;
+  href?: string;
   label: string;
-  icon: LucideIcon;
+  icon: LucideIcon | typeof WhatsAppIcon;
   isPrimary?: boolean;
 }
 
@@ -14,16 +16,15 @@ const NAV_ITEMS: NavItem[] = [
   { to: "/skin-treatments", label: "Skin", icon: Sparkles },
   { to: "/contact", label: "Book", icon: Phone, isPrimary: true },
   { to: "/hair-treatments", label: "Hair", icon: Scissors },
-  { to: "/blog", label: "Blog", icon: BookOpen },
+  { href: "https://wa.me/919000000000?text=Hi%20SHS%2C%20I%27d%20like%20a%20consultation", label: "WhatsApp", icon: WhatsAppIcon },
 ];
 
-function NavTab({ to, label, icon: Icon }: NavItem) {
+function NavTab({ to, href, label, icon: Icon }: NavItem) {
   const matchRoute = useMatchRoute();
-  const isActive = !!matchRoute({ to, fuzzy: to === "/" ? false : true });
+  const isActive = to ? !!matchRoute({ to, fuzzy: to === "/" ? false : true }) : false;
 
-  return (
-    <li>
-      <Link to={to} className="group flex flex-col items-center gap-0.5 py-2 px-3">
+  const content = (
+    <>
         <span
           className={`flex h-8 w-8 items-center justify-center rounded-full transition-all duration-200 ${
             isActive ? "bg-primary/10 scale-110" : "group-active:scale-95"
@@ -43,25 +44,48 @@ function NavTab({ to, label, icon: Icon }: NavItem) {
         >
           {label}
         </span>
-      </Link>
+    </>
+  );
+
+  return (
+    <li>
+      {to ? (
+        <Link to={to} className="group flex flex-col items-center gap-0.5 py-2 px-3">
+          {content}
+        </Link>
+      ) : (
+        <a href={href} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-0.5 py-2 px-3">
+          {content}
+        </a>
+      )}
     </li>
   );
 }
 
-function PrimaryTab({ to, label, icon: Icon }: NavItem) {
+function PrimaryTab({ to, href, label, icon: Icon }: NavItem) {
+  const inner = (
+    <span
+      className="flex h-14 w-14 flex-col items-center justify-center rounded-full transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+      style={{
+        background: "var(--burgundy)",
+        boxShadow: "0 8px 32px -6px color-mix(in oklab, var(--burgundy) 60%, transparent)",
+      }}
+    >
+      <Icon className="h-5 w-5 text-white" strokeWidth={1.8} />
+    </span>
+  );
+
   return (
     <li className="flex flex-col items-center -mt-5">
-      <Link
-        to={to}
-        aria-label="Book Appointment"
-        className="flex h-14 w-14 flex-col items-center justify-center rounded-full transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-        style={{
-          background: "var(--burgundy)",
-          boxShadow: "0 8px 32px -6px color-mix(in oklab, var(--burgundy) 60%, transparent)",
-        }}
-      >
-        <Icon className="h-5 w-5 text-white" strokeWidth={1.8} />
-      </Link>
+      {to ? (
+        <Link to={to} aria-label={label}>
+          {inner}
+        </Link>
+      ) : (
+        <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
+          {inner}
+        </a>
+      )}
       <span className="mt-1 mb-1.5 text-[10px] font-semibold uppercase tracking-widest text-primary">
         {label}
       </span>

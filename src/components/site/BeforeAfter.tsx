@@ -17,7 +17,7 @@ export function BeforeAfter({
     if (!el) return;
     const rect = el.getBoundingClientRect();
     const p = ((clientX - rect.left) / rect.width) * 100;
-    setPos(Math.max(2, Math.min(98, p)));
+    setPos(Math.max(0, Math.min(100, p)));
   };
 
   return (

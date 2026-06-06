@@ -1,10 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { ArrowUpRight } from "lucide-react";
-import hero from "@/assets/hero-skin.jpg";
-import clinic from "@/assets/clinic-interior.jpg";
-import laser from "@/assets/laser-tech.jpg";
-import pharma from "@/assets/pharma-products.jpg";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
+import { FadeIn, SlideUp, Stagger, StaggerItem } from "@/components/ui/motion";
+import hero from "@/assets/hero-skin.png";
+import clinic from "@/assets/clinic-interior.png";
+import laser from "@/assets/laser-tech.png";
+import pharma from "@/assets/pharma-products.png";
 
 export const Route = createFileRoute("/skin-treatments")({
   head: () => ({
@@ -60,8 +62,8 @@ function Skin() {
           <Link to="/contact" className="btn-primary">
             Book Skin Consultation
           </Link>
-          <a href="https://wa.me/919000000000" className="btn-outline">
-            WhatsApp
+          <a href="https://wa.me/919000000000" className="btn-outline inline-flex items-center gap-2">
+            <WhatsAppIcon className="h-4 w-4" /> WhatsApp
           </a>
         </div>
       </PageHero>
@@ -70,31 +72,30 @@ function Skin() {
         <div className="container-x">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {TREATMENTS.map((t, i) => (
-              <article
-                key={t.t}
-                className="group flex flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-foreground/5 transition-shadow hover:shadow-xl"
-              >
-                <div className="aspect-[4/3] overflow-hidden bg-secondary">
-                  <img
-                    src={t.img}
-                    alt={t.t}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <span className="text-xs text-muted-foreground">0{i + 1}</span>
-                  <h2 className="mt-3 font-display text-xl">{t.t}</h2>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t.d}</p>
-                  <Link
-                    to="/contact"
-                    className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-primary"
-                  >
-                    Enquire{" "}
-                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                  </Link>
-                </div>
-              </article>
+              <SlideUp key={t.t} delay={i * 0.1}>
+                <article className="group flex h-full flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-foreground/5 transition-shadow hover:shadow-xl">
+                  <div className="aspect-[4/3] overflow-hidden bg-secondary">
+                    <img
+                      src={t.img}
+                      alt={t.t}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <span className="text-xs text-muted-foreground">0{i + 1}</span>
+                    <h2 className="mt-3 font-display text-xl">{t.t}</h2>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t.d}</p>
+                    <Link
+                      to="/contact"
+                      className="mt-auto pt-6 inline-flex items-center gap-1 text-sm font-medium text-primary"
+                    >
+                      Enquire{" "}
+                      <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    </Link>
+                  </div>
+                </article>
+              </SlideUp>
             ))}
           </div>
         </div>
@@ -118,8 +119,8 @@ function Skin() {
               <p className="mt-3 text-sm text-muted-foreground">
                 Share your concern via WhatsApp and our team will recommend the right consultation.
               </p>
-              <a href="https://wa.me/919000000000" className="btn-primary mt-8 w-full">
-                Talk to us
+              <a href="https://wa.me/919000000000" className="btn-primary mt-8 w-full inline-flex items-center justify-center gap-2">
+                <WhatsAppIcon className="h-4 w-4" /> Talk to us
               </a>
             </div>
           </div>
