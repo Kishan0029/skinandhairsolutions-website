@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { FadeIn, SlideUp, Stagger, StaggerItem } from "@/components/ui/motion";
-import { MapPin, Phone, Mail, Clock, Calendar as CalendarIcon, Video, Stethoscope, AlertTriangle, CreditCard, CheckCircle2 } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Calendar as CalendarIcon, Video, Stethoscope, CreditCard, CheckCircle2 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { useState } from "react";
 import { z } from "zod";
@@ -220,21 +220,6 @@ function Contact() {
                       <span>care@skinandhairsolutions.in</span>
                     </li>
                   </ul>
-                </div>
-              </StaggerItem>
-
-              {/* Emergency Block */}
-              <StaggerItem>
-                <div className="rounded-2xl border-l-4 border-amber-500 bg-amber-500/10 p-5">
-                  <div className="flex items-start gap-3">
-                    <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
-                    <div>
-                      <h4 className="text-sm font-semibold text-amber-800">Medical Emergency?</h4>
-                      <p className="mt-1 text-xs leading-relaxed text-amber-700/80">
-                        We are an elective dermatology and aesthetic clinic. If you are experiencing a severe allergic reaction, burns, or a medical emergency, please visit your nearest hospital emergency room immediately.
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </StaggerItem>
             </Stagger>
