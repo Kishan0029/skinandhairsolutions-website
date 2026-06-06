@@ -54,7 +54,7 @@ function About() {
           <FadeIn className="lg:col-span-5">
             <img
               src={doctor}
-              alt="Lead dermatologist at SHS"
+              alt="Dr. Santosh Shinde, Lead Dermatologist at SHS"
               width={1100}
               height={1400}
               className="aspect-[4/5] w-full rounded-3xl object-cover"
@@ -72,7 +72,7 @@ function About() {
             </StaggerItem>
             <StaggerItem>
               <p className="mt-6 text-muted-foreground">
-                Skin & Hair Solutions was founded to bring metro-grade dermatology and trichology to
+                Led by Dr. Santosh Shinde, Skin & Hair Solutions was founded to bring metro-grade dermatology and trichology to
                 Belagavi — combining medical rigour with the warmth, comfort and discretion of a
                 premium hospitality experience.
               </p>

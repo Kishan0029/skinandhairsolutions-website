@@ -288,7 +288,7 @@ function Home() {
                 <StaggerItem>
                   <img
                     src={doctor}
-                    alt="Experienced dermatologist consultation"
+                    alt="Dr. Santosh Shinde, Lead Dermatologist"
                     className="aspect-[4/5] w-full rounded-2xl object-cover"
                     loading="lazy"
                   />
