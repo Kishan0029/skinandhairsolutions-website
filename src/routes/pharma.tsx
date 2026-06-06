@@ -157,7 +157,7 @@ function Pharma() {
         lede="A focused range of dermaceutical actives, formulated to complement your in-clinic care."
       />
 
-      <section className="bg-background pt-10 pb-24">
+      <section className="bg-background py-16 md:py-24">
         <div className="container-x">
           {/* Filter + cart bar */}
           <FadeIn className="mb-10 flex flex-wrap items-center justify-between gap-4">

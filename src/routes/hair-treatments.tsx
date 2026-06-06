@@ -56,7 +56,7 @@ function Hair() {
         </div>
       </PageHero>
 
-      <section className="bg-background py-24">
+      <section className="bg-background py-16 md:py-24">
         <div className="container-x">
           <p className="eyebrow">Our Hair Services</p>
           <h2 className="mt-4 max-w-2xl font-display text-4xl md:text-5xl">

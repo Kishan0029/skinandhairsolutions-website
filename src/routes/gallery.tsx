@@ -53,7 +53,7 @@ function Gallery() {
         }
         lede="Every result is from a real patient on a real protocol. Drag the slider to compare."
       />
-      <section className="bg-background py-24">
+      <section className="bg-background py-16 md:py-24">
         <div className="container-x">
           <FadeIn className="flex flex-wrap gap-2">
             {FILTERS.map((f) => (

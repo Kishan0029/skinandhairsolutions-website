@@ -49,7 +49,7 @@ function About() {
         lede="A modern medical practice built on dermatology expertise, advanced technology and quiet, considered design — for patients who expect more."
       />
 
-      <section className="bg-background py-24">
+      <section className="bg-background py-16 md:py-24">
         <div className="container-x grid gap-14 lg:grid-cols-12 lg:items-center">
           <FadeIn className="lg:col-span-5">
             <img
@@ -99,7 +99,7 @@ function About() {
         </div>
       </section>
 
-      <section className="bg-beige py-24">
+      <section className="bg-beige py-16 md:py-24">
         <div className="container-x">
           <p className="eyebrow">Our Values</p>
           <h2 className="mt-4 max-w-3xl font-display text-4xl md:text-5xl">
@@ -117,7 +117,7 @@ function About() {
         </div>
       </section>
 
-      <section className="bg-background py-24">
+      <section className="bg-background py-16 md:py-24">
         <div className="container-x">
 
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">

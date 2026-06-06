@@ -68,7 +68,7 @@ function Skin() {
         </div>
       </PageHero>
 
-      <section className="bg-background py-24">
+      <section className="bg-background py-16 md:py-24">
         <div className="container-x">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {TREATMENTS.map((t, i) => (
@@ -101,7 +101,7 @@ function Skin() {
         </div>
       </section>
 
-      <section className="bg-beige py-24">
+      <section className="bg-beige py-16 md:py-24">
         <div className="container-x grid gap-12 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-7">
             <p className="eyebrow">Belagavi's Trusted Dermatology Clinic</p>

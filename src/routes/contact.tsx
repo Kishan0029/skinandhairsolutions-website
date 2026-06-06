@@ -68,7 +68,7 @@ function Contact() {
         }
         lede="Share a few details and our team will confirm your appointment within working hours."
       />
-      <section className="relative overflow-hidden bg-background py-24">
+      <section className="relative overflow-hidden bg-background py-16 md:py-24">
         {/* Decorative background glows */}
         <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-primary/5 blur-[120px]" />
         

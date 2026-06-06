@@ -4,7 +4,7 @@ import { Instagram, Facebook, Youtube, MapPin, Phone, Mail } from "lucide-react"
 export function SiteFooter() {
   return (
     <footer className="mt-24 bg-foreground text-background">
-      <div className="container-x py-20">
+      <div className="container-x pt-20 pb-28 md:py-20">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <div>

@@ -27,7 +27,7 @@ export function PageHero({
           <p className="eyebrow">{eyebrow}</p>
         </StaggerItem>
         <StaggerItem>
-          <h1 className="reveal mt-5 max-w-4xl font-display text-5xl leading-[1.02] md:text-7xl">
+          <h1 className="reveal mt-5 max-w-4xl font-display text-4xl leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl lg:leading-[1.02]">
             {title}
           </h1>
         </StaggerItem>

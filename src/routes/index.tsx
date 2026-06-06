@@ -145,7 +145,7 @@ function Home() {
               <p className="eyebrow">Belagavi · Since years of trust</p>
             </StaggerItem>
             <StaggerItem>
-              <h1 className="reveal mt-6 font-display text-[2.8rem] leading-[1.02] tracking-[-0.02em] sm:text-6xl lg:text-[5.25rem]">
+              <h1 className="reveal mt-6 font-display text-4xl leading-[1.05] tracking-[-0.02em] sm:text-6xl lg:text-[5.25rem] lg:leading-[1.02]">
                 Healthy Skin.
                 <br />
                 Stronger Hair.
@@ -222,7 +222,7 @@ function Home() {
               { v: 98, s: "%", l: "Patient Satisfaction" },
             ].map((s) => (
               <StaggerItem key={s.l} className="text-center">
-                <p className="font-display text-5xl text-primary md:text-6xl">
+                <p className="font-display text-4xl text-primary md:text-5xl lg:text-6xl">
                   <Counter value={s.v} suffix={s.s} />
                 </p>
                 <p className="mt-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">
@@ -235,12 +235,12 @@ function Home() {
       </section>
 
       {/* SERVICES */}
-      <section className="bg-beige py-24">
+      <section className="bg-beige py-16 md:py-24">
         <div className="container-x">
           <div className="flex items-end justify-between gap-6">
             <div>
               <p className="eyebrow">Our Care</p>
-              <h2 className="mt-4 max-w-2xl font-display text-4xl md:text-5xl">
+              <h2 className="mt-4 max-w-2xl font-display text-3xl md:text-5xl">
                 A complete spectrum of dermatology, trichology & aesthetic medicine.
               </h2>
             </div>
@@ -251,7 +251,7 @@ function Home() {
               Explore all →
             </Link>
           </div>
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 md:mt-14">
             {SERVICES.map((s, i) => (
               <SlideUp key={s.title} delay={i * 0.1}>
                 <Link
@@ -280,7 +280,7 @@ function Home() {
       </section>
 
       {/* EDITORIAL SPLIT */}
-      <section className="bg-background py-24">
+      <section className="bg-background py-16 md:py-24">
         <div className="container-x grid gap-14 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-6">
             <Stagger className="grid grid-cols-2 gap-4">
@@ -356,11 +356,11 @@ function Home() {
       </section>
 
       {/* BEFORE & AFTER */}
-      <section className="bg-beige py-24">
+      <section className="bg-beige py-16 md:py-24">
         <div className="container-x">
           <div className="max-w-2xl">
             <p className="eyebrow">Real Results</p>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl">
+            <h2 className="mt-4 font-display text-3xl md:text-5xl">
               Before & after, side by side.
             </h2>
             <p className="mt-4 text-muted-foreground">
@@ -381,11 +381,11 @@ function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="bg-background py-24">
+      <section className="bg-background py-16 md:py-24">
         <div className="container-x">
           <div className="max-w-2xl">
             <p className="eyebrow">Patient Stories</p>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl">
+            <h2 className="mt-4 font-display text-3xl md:text-5xl">
               Trusted by thousands across North Karnataka.
             </h2>
           </div>
@@ -427,8 +427,8 @@ function Home() {
       </section>
 
       {/* PHARMA */}
-      <section className="bg-foreground py-24 text-background">
-        <div className="container-x grid gap-14 lg:grid-cols-12 lg:items-center">
+      <section className="bg-foreground py-16 md:py-24 text-background">
+        <div className="container-x grid gap-10 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-6">
             <img
               src={pharma}
@@ -441,7 +441,7 @@ function Home() {
           </div>
           <div className="lg:col-span-6">
             <p className="eyebrow text-[var(--gold)]">SHS Pharma</p>
-            <h2 className="mt-4 font-display text-4xl text-background md:text-5xl">
+            <h2 className="mt-4 font-display text-3xl text-background md:text-5xl">
               Clinical formulations, designed by our specialists.
             </h2>
             <p className="mt-5 text-background/70">
@@ -456,11 +456,11 @@ function Home() {
       </section>
 
       {/* JOURNEY */}
-      <section className="bg-background py-24">
+      <section className="bg-background py-16 md:py-24">
         <div className="container-x">
           <div className="max-w-2xl">
             <p className="eyebrow">Your Journey</p>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl">
+            <h2 className="mt-4 font-display text-3xl md:text-5xl">
               Considered care, every step of the way.
             </h2>
           </div>
@@ -477,7 +477,7 @@ function Home() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="relative overflow-hidden bg-primary py-24 text-primary-foreground">
+      <section className="relative overflow-hidden bg-primary py-16 md:py-24 text-primary-foreground">
         <img
           src={laser}
           alt=""
@@ -488,7 +488,7 @@ function Home() {
         <div className="container-x relative grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-8">
             <p className="text-xs uppercase tracking-[0.22em] text-[var(--gold)]">Begin Today</p>
-            <h2 className="mt-4 font-display text-5xl text-primary-foreground md:text-7xl">
+            <h2 className="mt-4 font-display text-4xl text-primary-foreground md:text-7xl">
               Book your consultation.
             </h2>
             <p className="mt-5 max-w-xl text-primary-foreground/80">

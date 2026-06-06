@@ -70,7 +70,7 @@ function Blog() {
         }
         lede="Expert-written, evidence-based guidance from the specialists at SHS."
       />
-      <section className="bg-background py-24">
+      <section className="bg-background py-16 md:py-24">
         <div className="container-x grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {POSTS.map((p) => (
             <article key={p.t} className="group flex flex-col">
